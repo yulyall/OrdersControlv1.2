@@ -1,0 +1,56 @@
+﻿<Window x:Class="OrdersControl_V1.Create"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrdersControl_V1"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Create" Height="450" Width="300">
+    <Viewbox VerticalAlignment="Center" HorizontalAlignment="Left">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <Button Height="30" Width="Auto" Margin="5" Content="Создать" Name="CreateBtn" Click="CreateBtn_Click"/>
+                <Button Height="30" Width="Auto" Margin="5" Content="Назад" Name="backToMenu" Click="backToMenu_Click"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
+                <Label Content="Производитель:"/>
+                <ComboBox x:Name="manufacturerComboBox" DisplayMemberPath="name" SelectedValuePath="Id"  Margin="0,5,0,0" />
+
+                <Label Content="Дата начала:"/>
+                <DatePicker x:Name="startDatePicker"/>
+
+                <Label Content="Дата окончания:"/>
+                <DatePicker x:Name="endDatePicker"/>
+
+                <Label Content="Статус:"/>
+                <ComboBox x:Name="statusComboBox" DisplayMemberPath="name" SelectedValuePath="Id"/>
+
+                <Label Content="Марка:"/>
+                <ComboBox x:Name="markComboBox" DisplayMemberPath="name" SelectedValuePath="Id"/>
+
+                <Label Content="Диаметр:"/>
+                <TextBox x:Name="diameterTextBox"/>
+
+                <Label Content="Стенка:"/>
+                <TextBox x:Name="wallTextBox"/>
+
+                <Label Content="Количество:"/>
+                <TextBox x:Name="volumeTextBox"/>
+
+                <Label Content="Единица:"/>
+                <TextBox x:Name="unitTextBox"/>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Window>
